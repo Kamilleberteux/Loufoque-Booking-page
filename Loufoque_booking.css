@@ -8,11 +8,10 @@ body {
   align-items: center;     /* vertical */
 }
  
-.booking-step {
-    display: flex;
-    justify-content: center; /* horizontal */
-    align-items: center;     /* vertical */
-    height: 100vh;  
+ul {
+    display: inline;
+}
+.booking-step { 
     font-family: "Alegreya Sans", sans-serif;
     font-weight: bold;
     font-style: normal;
