@@ -1,5 +1,6 @@
 body {
     background-color: #0E553B;
+    font-family: "Alegreya Sans", "Open Sans", sans-serif;
 }
 
 
@@ -23,6 +24,7 @@ body {
   padding: 10px 20px;
   border-radius: 30px;
   background-color: #3f7f69;
+  font-weight: 300;
   color: #cfe6dd;
   font-weight: 500;
 }
@@ -33,6 +35,7 @@ body {
   border-radius: 50%;
   background-color: #cfe6dd;
   color: #0E553B;
+  font-weight: 300;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,6 +45,8 @@ body {
 /* Étape active */
 .step.active {
   background-color: #e9f1ee;
+  font-weight: 700;
+  font-family: "Alegreya Sans", "Open Sans", sans-serif;
   color: #0E553B;
 }
 
@@ -50,7 +55,65 @@ body {
   color: #ffffff;
 }
 
-/*BOOKING SECTION START*/
+/*BOOKING INFO -NEW*/
+.field-wrapper {
+    position: relative;
+}
+
+#booking-form {
+    margin: 50px auto;
+}
+
+.booking-input {
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    margin: 10px auto;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 400;
+}
+
+/*Dans la box*/
+.floating-label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #999;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+
+/* quand focus OU valeur réelle */
+/*A l'extérieur de la box*/
+.booking-input:focus + .floating-label,
+.booking-input.has-value + .floating-label {
+    top: 6px;
+    font-size: 5px;
+    color: rgba(255, 255, 255, 0);
+}
+
+/* Masque le texte natif des inputs date & time */
+.booking-input[type="date"],
+.booking-input[type="time"] {
+    color: transparent;
+    caret-color: transparent;
+}
+
+/* Affiche le texte quand focus OU valeur réelle */
+.booking-input[type="date"]:focus,
+.booking-input[type="date"].has-value,
+.booking-input[type="time"]:focus,
+.booking-input[type="time"].has-value {
+    color: #0E553B;
+    caret-color: #0E553B;
+}
+
+/*BOOKING INFO END -NEW*/
+
+/*BOOKING SECTION Broullion
 
 #booking-form {
     display: flex;
@@ -63,7 +126,6 @@ body {
 /*#booking-form {
     display: flex;
     align-items: center;
-    font-family: "Alegrya Sans", sans-serif;
     font-weight: lighter;
     text-align: left;
     color: rgba(14, 85, 59, 0.4);
@@ -72,7 +134,7 @@ body {
     width: 400px;
     margin: 25px auto;
     border-radius: 5px;
-}*/
+}
 
 .field-wrapper {
     position: relative;
@@ -90,9 +152,10 @@ body {
     background: none;
 }
 
-/*Dans la box*/
+/Dans la box/
 .floating-label {
     position: absolute;
+    font-weight: 300;
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
@@ -104,7 +167,7 @@ body {
     padding: 0 5px;
 }
 
-/*A l'extérieur de la box*/
+/A l'extérieur de la box/
 .booking-input:focus + .floating-label, .booking-input:not(:placeholder-shown) + .floating-label {
     top: -8px;
     font-size: 12px;
@@ -117,15 +180,13 @@ body {
     border-color: white;
 }
 
-/*BOOKING SECTION END*/
+BOOKING SECTION END BROUILLIN*/
 
 a{
   text-decoration: none;
 }
 
 .booking-button {
-    font-family: "Alegrya Sans", sans-serif;
-    font-weight: 200;
     font-style: normal;
     text-align: center;
     color: #0E553B;

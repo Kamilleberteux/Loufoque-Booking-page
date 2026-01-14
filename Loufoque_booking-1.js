@@ -1,31 +1,50 @@
-// Récupération du conteneur
-const container = document.getElementById("booking-form");
+// Attendre que le DOM soit chargé
+document.addEventListener("DOMContentLoaded", () => {
 
-// Fonction pour créer un champ avec label flottant
-function createField(labelText, inputType, min = null, max = null) {
-    const wrapper = document.createElement("div");
-    wrapper.className = "field-wrapper";
+    // Récupération du conteneur
+    const container = document.getElementById("booking-form");
 
-    const input = document.createElement("input");
-    input.type = inputType;
-    input.className = "booking-input";
-    input.placeholder = " "; // indispensable pour le label flottant
-    input.required = true;
+    // Sécurité : si le conteneur n'existe pas
+    if (!container) {
+        console.error("❌ Élément #booking-form introuvable");
+        return;
+    }
 
-    if (min !== null) input.min = min;
-    if (max !== null) input.max = max;
+    // Fonction pour créer un champ avec label flottant
+    function createField(labelText, inputType, min = null, max = null) {
+        const wrapper = document.createElement("div");
+        wrapper.className = "field-wrapper";
 
-    const label = document.createElement("label");
-    label.textContent = labelText;
-    label.className = "floating-label";
+        const input = document.createElement("input");
+        input.type = inputType;
+        input.className = "booking-input";
+        input.required = true;
+        input.value = "";
 
-    wrapper.appendChild(input);
-    wrapper.appendChild(label);
+        if (min !== null) input.min = min;
+        if (max !== null) input.max = max;
 
-    return wrapper;
-}
+        // Gestion du label flottant pour date / time
+        input.addEventListener("change", () => {
+            if (input.value !== "") {
+                input.classList.add("has-value");
+            } else {
+                input.classList.remove("has-value");
+            }
+        });
 
-// Ajout des champs au HTML
-container.appendChild(createField("Booking date", "date"));
-container.appendChild(createField("Booking time", "time"));
-container.appendChild(createField("Number of people", "number", 1, 10));
+        const label = document.createElement("label");
+        label.textContent = labelText;
+        label.className = "floating-label";
+
+        wrapper.appendChild(input);
+        wrapper.appendChild(label);
+
+        return wrapper;
+    }
+
+    // Ajout des champs
+    container.appendChild(createField("Booking date", "date"));
+    container.appendChild(createField("Booking time", "time"));
+    container.appendChild(createField("Number of people", "number", 1, 10));
+});
