@@ -10,6 +10,7 @@ body {
  
 .booking-step {
   display: flex;
+  justify-content: center;
   gap: 16px;
   padding: 20px;
 }
@@ -77,4 +78,5 @@ body {
 
 .booking-button:hover {
     background-color: #3f7f69;
+    color: #ffffff;
 }
