@@ -1,46 +1,31 @@
+// Récupération du conteneur
 const container = document.getElementById("booking-form");
 
-//Booking date
-const dateField = document.createElement("input");
-dateField.type = "date";
-dateField.className = "booking-info";
+// Fonction pour créer un champ avec label flottant
+function createField(labelText, inputType, min = null, max = null) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "field-wrapper";
 
-//Booking time
-const timeField = document.createElement("input");
-timeField.type = "time";
-timeField.className = "booking-info";
+    const input = document.createElement("input");
+    input.type = inputType;
+    input.className = "booking-input";
+    input.placeholder = " "; // indispensable pour le label flottant
+    input.required = true;
 
-//Number of people
-const peopleField = document.createElement("input");
-peopleField.type = "number";
-peopleField.min = 1;
-peopleField.max = 10;
-peopleField.placeholder = "Number of people";
-peopleField.className = "booking info";
+    if (min !== null) input.min = min;
+    if (max !== null) input.max = max;
 
-//Ajout au HTML
-container.appendChild(dateField);
-container.appendChild(timeField);
-container.appendChild(peopleField);
+    const label = document.createElement("label");
+    label.textContent = labelText;
+    label.className = "floating-label";
 
-//Label
-function createField(labelText, inputType) {
-  const wrapper = document.createElement("div");
+    wrapper.appendChild(input);
+    wrapper.appendChild(label);
 
-  const label = document.createElement("label");
-  label.textContent = labelText;
-
-  const input = document.createElement("input");
-  input.type = inputType;
-  input.className = "booking-info";
-
-  wrapper.appendChild(label);
-  wrapper.appendChild(input);
-
-  return wrapper;
+    return wrapper;
 }
 
+// Ajout des champs au HTML
 container.appendChild(createField("Booking date", "date"));
 container.appendChild(createField("Booking time", "time"));
-container.appendChild(createField("Number of people", "number"));
-
+container.appendChild(createField("Number of people", "number", 1, 10));
