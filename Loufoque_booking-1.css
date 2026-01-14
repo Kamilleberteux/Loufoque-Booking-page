@@ -53,7 +53,8 @@ body {
     font-family: "Alegrya Sans", sans-serif;
     font-weight: lighter;
     text-align: left;
-    color: #0E553B;
+    color: rgba(14, 85, 59, 0.4);
+    text-tr: 50%;
     background-color: white;
     padding: 5px;
     width: 400px;
@@ -61,7 +62,11 @@ body {
     border-radius: 5px;
 }
 
-.booking-button{
+a{
+  text-decoration: none;
+}
+
+.booking-button {
     font-family: "Alegrya Sans", sans-serif;
     font-weight: 200;
     font-style: normal;
