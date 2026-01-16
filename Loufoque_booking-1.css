@@ -14,14 +14,14 @@ body {
   display: flex;
   justify-content: center;
   gap: 16px;
-  padding: 20px;
+  padding: 1px;
 }
 
 .step {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border-radius: 30px;
   background-color: #3f7f69;
   font-weight: 300;
@@ -55,7 +55,7 @@ body {
   color: #ffffff;
 }
 
-/*BOOKING INFO -NEW*/
+/*BOOKING INFO 1*/
 .field-wrapper {
     position: relative;
 }
@@ -68,8 +68,9 @@ body {
     display: flex;
     align-items: center;
     padding: 10px 10px;
-    margin: 10px auto;
+    margin: 15px auto;
     border-radius: 6px;
+    border: 1px solid transparent;
     font-size: 16px;
     width: 400;
 }
@@ -78,10 +79,10 @@ body {
 .floating-label {
     position: absolute;
     top: 50%;
-    left: 10px;
+    left: 500px;
     transform: translateY(-50%);
     font-size: 14px;
-    color: #999;
+    color: #80aa9a;
     pointer-events: none;
     transition: 0.2s ease;
 }
@@ -111,76 +112,10 @@ body {
     caret-color: #0E553B;
 }
 
-/*BOOKING INFO END -NEW*/
-
-/*BOOKING SECTION Broullion
-
-#booking-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 400px;
-    margin: 50px auto;
+.booking-input[type="number"].has-value{
+  color:#0E553B
 }
-
-/*#booking-form {
-    display: flex;
-    align-items: center;
-    font-weight: lighter;
-    text-align: left;
-    color: rgba(14, 85, 59, 0.4);
-    background-color: white;
-    padding: 5px;
-    width: 400px;
-    margin: 25px auto;
-    border-radius: 5px;
-}
-
-.field-wrapper {
-    position: relative;
-    background-color: white;
-    border-radius: 6px;
-}
-
-.booking-input {
-    width: 100%;
-    padding: 14px 10px;
-    font-size: 16px;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background: none;
-}
-
-/Dans la box/
-.floating-label {
-    position: absolute;
-    font-weight: 300;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #0E553B;
-    font-size: 16px;
-    pointer-events: none;
-    transition: 0.2s ease;
-    background: rgba(255, 255, 255, 0);
-    padding: 0 5px;
-}
-
-/A l'extérieur de la box/
-.booking-input:focus + .floating-label, .booking-input:not(:placeholder-shown) + .floating-label {
-    top: -8px;
-    font-size: 12px;
-    background-color: rgba(255, 255, 255, 0);
-    color: #cfe6dd;
-}
-
-.booking-input:focus {
-    outline: none;
-    border-color: white;
-}
-
-BOOKING SECTION END BROUILLIN*/
+/*BOOKING INFO END 1*/
 
 a{
   text-decoration: none;
@@ -193,7 +128,7 @@ a{
     background-color: white;
     padding: 5px;
     width: 400px;
-    margin: 25px auto;
+    margin: 10px auto;
     border-radius: 5px;
     transition: 0.03 ease;
     box-shadow: 5px 5px 5px #1C352D;
@@ -203,3 +138,16 @@ a{
     background-color: #3f7f69;
     color: #ffffff;
 }
+
+/*BOOKING INFO 2*/
+
+#booking-coor {
+    margin: 50px auto;
+}
+
+.booking-input[type="email"].has-value, 
+.booking-input[type="name"].has-value, 
+.booking-input[type="phone"].has-value {
+  color:#0E553B
+}
+/*BOOKING INFO END 2*/
