@@ -8,6 +8,7 @@ body {
   display: flex;
   justify-content: center; /* horizontal */
   align-items: center;     /* vertical */
+  margin: 0px auto;
 }
  
 .booking-step {
@@ -138,6 +139,18 @@ a{
     background-color: #3f7f69;
     color: #ffffff;
 }
+
+/*Info du resto début*/
+#text-info{
+  align-items: center;
+  text-align: justify;
+  margin: 15px auto;
+  width: 400px;
+  color:#80aa9a;
+}
+
+/*Info du resto fin*/
+
 
 /*BOOKING INFO 2*/
 
